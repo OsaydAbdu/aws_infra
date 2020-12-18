@@ -1,0 +1,4 @@
+outs:
+- md5: 9b6428afe3ecb0ed6919b110131a9645
+  size: 20036
+  path: terraform.tfstate.backup

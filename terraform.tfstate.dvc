@@ -1,0 +1,4 @@
+outs:
+- md5: b1f7ae10231be0304166556e436bea4d
+  size: 20993
+  path: terraform.tfstate
