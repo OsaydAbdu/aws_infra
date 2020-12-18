@@ -1,2 +1,4 @@
+[core]
+    remote = s3_remote
 ['remote "s3_remote"']
     url = s3://osayd-io-terraform-state/state_files

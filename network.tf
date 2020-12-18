@@ -1,7 +1,7 @@
 
 resource "aws_security_group" "osaydio" {
   name        = "website"
-  description = "For osayd.io website"
+  description = "allow ssh, http, and https"
   vpc_id      = "vpc-fbb1d392"
 
   ingress {
