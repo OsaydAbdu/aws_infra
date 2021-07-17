@@ -10,7 +10,7 @@ resource "aws_instance" "osayd_io" {
   ebs_optimized               = true
   disable_api_termination     = true
   security_groups             = [aws_security_group.osaydio.name]
-  associate_public_ip_address = true
+  associate_public_ip_address = false
   key_name                    = "osayd.io"
   monitoring                  = false
   tags                        = {
@@ -23,7 +23,28 @@ resource "aws_instance" "osayd_io" {
     volume_size           = 8
     volume_type           = "gp2"
   }
-
+}
+  resource "aws_instance" "osayd_io_free" {
+  ami                         = "ami-08e6b682a466887dd"
+  instance_type               = "t4g.micro"
+  availability_zone           = "us-east-2a"
+  ebs_optimized               = true
+  disable_api_termination     = false
+  security_groups             = [aws_security_group.osaydio.name]
+  associate_public_ip_address = true
+  key_name                    = "osayd.io"
+  monitoring                  = false
+  tags                        = {
+    Name = "osayd.io_free"
+  }
+  vpc_security_group_ids      = ["sg-0a481d9561be8db9c",]
+  root_block_device {
+    delete_on_termination = true
+    encrypted             = false
+    volume_size           = 8
+    volume_type           = "gp2"
+  }
+}
 # ebs_block_device {
 #    delete_on_termination = false
 #    device_name           = "/dev/sda2"
@@ -32,5 +53,5 @@ resource "aws_instance" "osayd_io" {
 #    volume_type           = "gp2"
 #  }
 
-}
+
 

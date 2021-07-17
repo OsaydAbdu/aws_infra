@@ -42,7 +42,7 @@ resource "aws_security_group" "osaydio" {
 }
 
 resource "aws_eip" "osaydio_eip" {
-  instance = aws_instance.osayd_io.id
+  instance = aws_instance.osayd_io_free.id
   vpc      = true
   tags     = {
     Name = "osayd.io"

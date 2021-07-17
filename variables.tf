@@ -20,3 +20,19 @@ variable "osayd_io_ns_records" {
 variable "osayd_io_soa_records" {
 	default = "ns-1403.awsdns-47.org. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
 }
+
+variable "foodlist_osayd_io_txt_record_1" {
+	 default = "v=spf1 include:_spf.firebasemail.com ~all"
+}
+
+variable "foodlist_osayd_io_txt_record_2" {
+	 default = "firebase=food-list-59a6b"
+}
+
+variable "foodlist_osayd_io_cname_record_1" {
+	 default = "mail-foodlist-osayd-io.dkim1._domainkey.firebasemail.com."
+}
+
+variable "foodlist_osayd_io_cname_record_2" {
+	 default = "mail-foodlist-osayd-io.dkim2._domainkey.firebasemail.com."
+}
